@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{89bdc767-7048-4593-af2d-6fa3a21d14f6}</ProjectGuid>
+    <RootNamespace>RobloxDumperV</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Users\lkm00\source\repos\RobloxDumperV\HookEngine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>"C:\Users\lkm00\source\repos\RobloxDumperV\build\lib\HookEngine-x64-md.lib";%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="HookEngine\src\HookEngine\HookEngine.cpp" />
+    <ClCompile Include="HookEngine\src\HookEngine\HookInfo.cpp" />
+    <ClCompile Include="HookEngine\src\HookEngine\private\x64\CodeCaveFinder64.cpp" />
+    <ClCompile Include="HookEngine\src\HookEngine\private\x64\HookEngine64.cpp" />
+    <ClCompile Include="HookEngine\src\HookEngine\private\x86\CodeCaveFinder86.cpp" />
+    <ClCompile Include="HookEngine\src\HookEngine\private\x86\HookEngine86.cpp" />
+    <ClCompile Include="HookEngine\src\HookEngine\System\CriticalSection.cpp" />
+    <ClCompile Include="HookEngine\src\HookEngine\System\Lock.cpp" />
+    <ClCompile Include="HookEngine\src\HookEngine\udis86\decode.c" />
+    <ClCompile Include="HookEngine\src\HookEngine\udis86\itab.c" />
+    <ClCompile Include="HookEngine\src\HookEngine\udis86\syn-att.c" />
+    <ClCompile Include="HookEngine\src\HookEngine\udis86\syn-intel.c" />
+    <ClCompile Include="HookEngine\src\HookEngine\udis86\syn.c" />
+    <ClCompile Include="HookEngine\src\HookEngine\udis86\udis86.c" />
+    <ClCompile Include="HookManager.cpp" />
+    <ClCompile Include="Injection.cpp" />
+    <ClCompile Include="RbxInstance.cpp" />
+    <ClCompile Include="RobloxDumperV.cpp" />
+    <ClCompile Include="RBX.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HookEngine\include\HookEngine\AutoLink.h" />
+    <ClInclude Include="HookEngine\include\HookEngine\Hook.h" />
+    <ClInclude Include="HookEngine\include\HookEngine\HookEngine.h" />
+    <ClInclude Include="HookEngine\include\HookEngine\HookInfo.h" />
+    <ClInclude Include="HookEngine\include\HookEngine\HookMacro.h" />
+    <ClInclude Include="HookEngine\include\HookEngine\private\x64\CodeCaveFinder64.h" />
+    <ClInclude Include="HookEngine\include\HookEngine\private\x64\HookEngine64.h" />
+    <ClInclude Include="HookEngine\include\HookEngine\private\x64\HookMacro64.h" />
+    <ClInclude Include="HookEngine\include\HookEngine\private\x86\CodeCaveFinder86.h" />
+    <ClInclude Include="HookEngine\include\HookEngine\private\x86\HookEngine86.h" />
+    <ClInclude Include="HookEngine\include\HookEngine\private\x86\HookMacro86.h" />
+    <ClInclude Include="HookEngine\include\HookEngine\System\CriticalSection.h" />
+    <ClInclude Include="HookEngine\include\HookEngine\System\Lock.h" />
+    <ClInclude Include="HookEngine\include\HookEngine\System\Singleton.h" />
+    <ClInclude Include="HookEngine\include\udis86\libudis86\extern.h" />
+    <ClInclude Include="HookEngine\include\udis86\libudis86\itab.h" />
+    <ClInclude Include="HookEngine\include\udis86\libudis86\types.h" />
+    <ClInclude Include="HookEngine\include\udis86\udis86.h" />
+    <ClInclude Include="HookEngine\src\HookEngine\udis86\decode.h" />
+    <ClInclude Include="HookEngine\src\HookEngine\udis86\extern.h" />
+    <ClInclude Include="HookEngine\src\HookEngine\udis86\itab.h" />
+    <ClInclude Include="HookEngine\src\HookEngine\udis86\syn.h" />
+    <ClInclude Include="HookEngine\src\HookEngine\udis86\types.h" />
+    <ClInclude Include="HookEngine\src\HookEngine\udis86\udint.h" />
+    <ClInclude Include="HookManager.h" />
+    <ClInclude Include="Injection.h" />
+    <ClInclude Include="RbxInstance.h" />
+    <ClInclude Include="Offsets.hpp" />
+    <ClInclude Include="RBX.h" />
+    <ClInclude Include="RbxMem.hpp" />
+    <ClInclude Include="RbxTypes.h" />
+    <ClInclude Include="RobloxDumperV.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\EasyHookNativePackage.redist.2.7.7097\build\native\EasyHookNativePackage.redist.targets" Condition="Exists('packages\EasyHookNativePackage.redist.2.7.7097\build\native\EasyHookNativePackage.redist.targets')" />
+    <Import Project="packages\EasyHookNativePackage.2.7.7097\build\native\EasyHookNativePackage.targets" Condition="Exists('packages\EasyHookNativePackage.2.7.7097\build\native\EasyHookNativePackage.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EasyHookNativePackage.redist.2.7.7097\build\native\EasyHookNativePackage.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EasyHookNativePackage.redist.2.7.7097\build\native\EasyHookNativePackage.redist.targets'))" />
+    <Error Condition="!Exists('packages\EasyHookNativePackage.2.7.7097\build\native\EasyHookNativePackage.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EasyHookNativePackage.2.7.7097\build\native\EasyHookNativePackage.targets'))" />
+  </Target>
+</Project>
