@@ -43,11 +43,12 @@ namespace RBX {
 
             HANDLE hProcess = NULL;
             NTSTATUS status = NtOpenProcess(&hProcess, PROCESS_ALL_ACCESS, &objAttr, clientId);
-
-            if (!NT_SUCCESS(status)) {
+            std::cout << NT_SUCCESS(status) << std::endl;
+            if (!(((NTSTATUS)(status)) >= 0)) {
+                std::cout << "Error getting Process Handle, Windows Error code: " << GetLastError() << std::endl;
                 return NULL;
             }
-
+            //std::cout << "Error getting Process Handle, Windows Error code: " << GetLastError() << std::endl;
             return hProcess;
         }
         void CallFunctionInInjectedDLL(HANDLE processHandle, const char* functionName) {

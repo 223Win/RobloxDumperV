@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Bytehide.Shield.Integration.2.4.4.2\build\Bytehide.Shield.Integration.props" Condition="Exists('packages\Bytehide.Shield.Integration.2.4.4.2\build\Bytehide.Shield.Integration.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -70,7 +71,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\ShadowFolder\RobloxDumperV Output</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -122,6 +125,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>C:\Users\lkm00\source\repos\RobloxDumperV\HookEngine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,9 +133,17 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>"C:\Users\lkm00\source\repos\RobloxDumperV\build\lib\HookEngine-x64-md.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <ShowProgress>NotSet</ShowProgress>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClassDescriptor.cpp" />
+    <ClCompile Include="DebugMode.cpp" />
+    <ClCompile Include="DllCore.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Encoding.cpp" />
+    <ClCompile Include="ExternalFunctions.cpp" />
+    <ClCompile Include="Getter.cpp" />
     <ClCompile Include="HookEngine\src\HookEngine\HookEngine.cpp" />
     <ClCompile Include="HookEngine\src\HookEngine\HookInfo.cpp" />
     <ClCompile Include="HookEngine\src\HookEngine\private\x64\CodeCaveFinder64.cpp" />
@@ -148,11 +160,33 @@
     <ClCompile Include="HookEngine\src\HookEngine\udis86\udis86.c" />
     <ClCompile Include="HookManager.cpp" />
     <ClCompile Include="Injection.cpp" />
+    <ClCompile Include="ObjectInit.cpp" />
+    <ClCompile Include="Properties.cpp" />
     <ClCompile Include="RbxInstance.cpp" />
     <ClCompile Include="RobloxDumperV.cpp" />
     <ClCompile Include="RBX.cpp" />
+    <ClCompile Include="Security.cpp" />
+    <ClCompile Include="SmartDecoder.cpp" />
+    <ClCompile Include="Threads.cpp" />
+    <ClCompile Include="TTypes.cpp" />
+    <ClCompile Include="TypeRegistery.cpp" />
+    <ClCompile Include="TypeRegisteryTTypes.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseObject.h" />
+    <ClInclude Include="ClassDescriptor.h" />
+    <ClInclude Include="DebugMode.h" />
+    <ClInclude Include="DllCore.h" />
+    <ClInclude Include="Encoding.h" />
+    <ClInclude Include="ExternalFunctions.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="Getter.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Predefs.h" />
+    <ClInclude Include="Threads.h" />
+    <ClInclude Include="TypeRegisteryTTypes.h" />
+    <ClInclude Include="ObjectInit.h" />
+    <ClInclude Include="Properties.h" />
     <ClInclude Include="HookEngine\include\HookEngine\AutoLink.h" />
     <ClInclude Include="HookEngine\include\HookEngine\Hook.h" />
     <ClInclude Include="HookEngine\include\HookEngine\HookEngine.h" />
@@ -184,10 +218,17 @@
     <ClInclude Include="RBX.h" />
     <ClInclude Include="RbxMem.hpp" />
     <ClInclude Include="RbxTypes.h" />
+    <ClInclude Include="Roblox.h" />
     <ClInclude Include="RobloxDumperV.h" />
+    <ClInclude Include="Security.h" />
+    <ClInclude Include="SmartDecoder.hpp" />
+    <ClInclude Include="SystemCalls.h" />
+    <ClInclude Include="TTypes.h" />
+    <ClInclude Include="TypeRegistery.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Roblox.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
@@ -200,5 +241,6 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\EasyHookNativePackage.redist.2.7.7097\build\native\EasyHookNativePackage.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EasyHookNativePackage.redist.2.7.7097\build\native\EasyHookNativePackage.redist.targets'))" />
     <Error Condition="!Exists('packages\EasyHookNativePackage.2.7.7097\build\native\EasyHookNativePackage.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EasyHookNativePackage.2.7.7097\build\native\EasyHookNativePackage.targets'))" />
+    <Error Condition="!Exists('packages\Bytehide.Shield.Integration.2.4.4.2\build\Bytehide.Shield.Integration.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Bytehide.Shield.Integration.2.4.4.2\build\Bytehide.Shield.Integration.props'))" />
   </Target>
 </Project>

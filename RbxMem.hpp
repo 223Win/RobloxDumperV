@@ -1,47 +1,38 @@
 #pragma once
 #include "RBX.h"
 #include "Injection.h"
+
+#include "SystemCalls.h"
+
 #include <Windows.h>
 
 namespace {
-	RBX::Injection::NtOpenProcess_t NtOpenProcess;
-	RBX::Injection::NtAllocateVirtualMemory_t NtAllocateVirtualMemory;
-	RBX::Injection::NtWriteVirtualMemory_t NtWriteVirtualMemory;
-	RBX::Injection::NtReadVirtualMemory_t NtReadVirtualMemory;
-	RBX::Injection::NtCreateThreadEx_t NtCreateThreadEx;
-	RBX::Injection::NtFreeVirtualMemory_t NtFreeVirtualMemory;
-	RBX::Injection::NtClose_t NtClose;
-
-	void InitOnce() {
-		static bool initialized = false;
-		if (!initialized) {
-			RBX::Injection::InitFunctions(NtOpenProcess, NtAllocateVirtualMemory, NtWriteVirtualMemory, NtReadVirtualMemory, NtCreateThreadEx, NtFreeVirtualMemory, NtClose);
-			initialized = true;
-		}
-	}
-
-	struct Initializer {
-		Initializer() {
-			InitOnce();
-		}
-	} initializer;
+	static RBX::Injection::NtReadVirtualMemory_t ReadM = System::GetSystemFunction<RBX::Injection::NtReadVirtualMemory_t>("ntdll.dll", "NtReadVirtualMemory");
+	static RBX::Injection::NtWriteVirtualMemory_t WriteM = System::GetSystemFunction<RBX::Injection::NtWriteVirtualMemory_t>("ntdll.dll", "NtWriteVirtualMemory");
 }
+
+
 
 namespace RBX {
 	namespace Memory {
 		template<typename T>
 		T Read(HANDLE ProcessHandle, unsigned long long Address) {
-			T Buffer{};
-			PULONG out = 0;
-			NtReadVirtualMemory(ProcessHandle, (PVOID)Address, &Buffer, sizeof(T), out);
-
-			return Buffer;
+			T buffer;
+			PULONG bytesRead = 0;
+			NTSTATUS Status = ReadM(ProcessHandle, reinterpret_cast<PVOID>(Address), &buffer, sizeof(T), bytesRead);
+			if (!NT_SUCCESS(Status)) {
+				/*std::cout << "Failed to read memory at address: " << std::hex << Address << std::endl;
+				std::cout << "Fail Code: " << Status << std::endl;
+				std::cout << "Returning Base Value" << std::endl;*/
+				return T{};
+			}
+			return buffer;
 		}
 
 		template<typename T>
 		void Write(HANDLE ProcessHandle, unsigned long long Address, T NewValue) {
-			PULONG out = 0;
-			NtWriteVirtualMemory(ProcessHandle, (PVOID)Address, &NewValue, sizeof(T), out);
+			PSIZE_T out = 0;
+			WriteM(ProcessHandle, (PVOID)Address, &NewValue, sizeof(T), out);
 		}
 	}
 }

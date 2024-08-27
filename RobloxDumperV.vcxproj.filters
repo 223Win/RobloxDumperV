@@ -16,54 +16,57 @@
     <Filter Include="HeaderCode Files">
       <UniqueIdentifier>{9ea7f544-f2f3-44f9-aa23-682ee1b1f8f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{a94551d5-9084-479e-824f-a761c2f06d96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\SmartDecoder">
+      <UniqueIdentifier>{d508e53c-e68c-4db6-85bb-a26c1c28b2c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{08784ece-2dcd-4f2b-adab-703844b78f80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Instances">
+      <UniqueIdentifier>{ad7726b3-58dc-4921-9456-336e5b868c59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\ClassDescriptor">
+      <UniqueIdentifier>{d72d31b8-d65d-4576-a8c3-bec75ff0c367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Security">
+      <UniqueIdentifier>{2e7efccb-8621-4249-8f47-71f3063feb35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\TTypes">
+      <UniqueIdentifier>{e5d7e31b-a599-42ea-a62b-df86e62d0be6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Properties">
+      <UniqueIdentifier>{77e3b1b3-6c7e-4179-9a94-bc526c31bff6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HookEngine">
+      <UniqueIdentifier>{15040cb1-f600-4214-84d4-44d8683af8c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\HookEngine">
+      <UniqueIdentifier>{ceeff0aa-5748-4c50-bbe5-14a9c713de48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Debug">
+      <UniqueIdentifier>{19b182a7-ae6d-4ac2-b043-591abfa6ae5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\ExternalFunctions">
+      <UniqueIdentifier>{29229403-9fde-42aa-a985-5f147ab3da1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Threads">
+      <UniqueIdentifier>{b4b061e8-7ea1-4f7a-9523-5ab968af0240}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dll">
+      <UniqueIdentifier>{f43dfd29-2256-48ee-973a-ee5653e1ffa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dll\Internals">
+      <UniqueIdentifier>{c383521d-c550-487f-ba99-adaca149fcd1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RobloxDumperV.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RBX.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\HookEngine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\HookInfo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\private\x64\CodeCaveFinder64.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\private\x64\HookEngine64.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\private\x86\CodeCaveFinder86.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\private\x86\HookEngine86.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\System\CriticalSection.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\System\Lock.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\udis86\decode.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\udis86\itab.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\udis86\syn-att.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\udis86\syn-intel.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\udis86\syn.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HookEngine\src\HookEngine\udis86\udis86.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="HookManager.cpp">
@@ -73,95 +76,104 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RbxInstance.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Objects\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassDescriptor.cpp">
+      <Filter>Objects\ClassDescriptor</Filter>
+    </ClCompile>
+    <ClCompile Include="Security.cpp">
+      <Filter>Utils\Security</Filter>
+    </ClCompile>
+    <ClCompile Include="TTypes.cpp">
+      <Filter>Objects\TTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Properties.cpp">
+      <Filter>Objects\Properties</Filter>
+    </ClCompile>
+    <ClCompile Include="SmartDecoder.cpp">
+      <Filter>Utils\SmartDecoder</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\private\x64\CodeCaveFinder64.cpp">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\udis86\decode.c">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\private\x86\CodeCaveFinder86.cpp">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\System\CriticalSection.cpp">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\HookInfo.cpp">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\private\x64\HookEngine64.cpp">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\HookEngine.cpp">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\private\x86\HookEngine86.cpp">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\System\Lock.cpp">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\udis86\syn.c">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\udis86\syn-att.c">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\udis86\udis86.c">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\udis86\syn-intel.c">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEngine\src\HookEngine\udis86\itab.c">
+      <Filter>Source Files\HookEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="TypeRegisteryTTypes.cpp">
+      <Filter>Objects\TTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectInit.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="TypeRegistery.cpp">
+      <Filter>Objects\TTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Getter.cpp">
+      <Filter>Objects\Properties</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugMode.cpp">
+      <Filter>Utils\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternalFunctions.cpp">
+      <Filter>Utils\ExternalFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="Encoding.cpp">
+      <Filter>Utils\Security</Filter>
+    </ClCompile>
+    <ClCompile Include="Threads.cpp">
+      <Filter>Utils\Threads</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Dll</Filter>
+    </ClCompile>
+    <ClCompile Include="DllCore.cpp">
+      <Filter>Dll</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RBX.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\AutoLink.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\Hook.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\HookEngine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\HookInfo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\HookMacro.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\private\x64\CodeCaveFinder64.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\private\x64\HookEngine64.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\private\x64\HookMacro64.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\private\x86\CodeCaveFinder86.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\private\x86\HookEngine86.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\private\x86\HookMacro86.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\System\CriticalSection.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\System\Lock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\HookEngine\System\Singleton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\udis86\libudis86\extern.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\udis86\libudis86\itab.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\udis86\libudis86\types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\include\udis86\udis86.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\src\HookEngine\udis86\decode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\src\HookEngine\udis86\extern.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\src\HookEngine\udis86\itab.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\src\HookEngine\udis86\syn.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\src\HookEngine\udis86\types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookEngine\src\HookEngine\udis86\udint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="RobloxDumperV.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Injection.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RbxInstance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RbxTypes.h">
@@ -171,10 +183,151 @@
       <Filter>HeaderCode Files</Filter>
     </ClInclude>
     <ClInclude Include="RbxMem.hpp">
+      <Filter>HeaderCode Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox.h">
+      <Filter>HeaderCode Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemCalls.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SmartDecoder.hpp">
+      <Filter>Utils\SmartDecoder</Filter>
+    </ClInclude>
+    <ClInclude Include="RbxInstance.h">
+      <Filter>Objects\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassDescriptor.h">
+      <Filter>Objects\ClassDescriptor</Filter>
+    </ClInclude>
+    <ClInclude Include="Security.h">
+      <Filter>Utils\Security</Filter>
+    </ClInclude>
+    <ClInclude Include="TTypes.h">
+      <Filter>Objects\TTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Properties.h">
+      <Filter>Objects\Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\src\HookEngine\udis86\extern.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\udis86\libudis86\extern.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\System\CriticalSection.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\src\HookEngine\udis86\decode.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\AutoLink.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\private\x86\CodeCaveFinder86.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\private\x64\CodeCaveFinder64.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\src\HookEngine\udis86\syn.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\Hook.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\private\x86\HookEngine86.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\HookMacro.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\HookInfo.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\private\x64\HookEngine64.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\HookEngine.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\udis86\libudis86\itab.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\System\Lock.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\src\HookEngine\udis86\itab.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookManager.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\private\x64\HookMacro64.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\private\x86\HookMacro86.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\udis86\udis86.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\src\HookEngine\udis86\udint.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\src\HookEngine\udis86\types.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\udis86\libudis86\types.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEngine\include\HookEngine\System\Singleton.h">
+      <Filter>Header Files\HookEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeRegistery.h">
+      <Filter>Objects\TTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectInit.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeRegisteryTTypes.h">
+      <Filter>Objects\TTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseObject.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Getter.h">
+      <Filter>Objects\Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugMode.h">
+      <Filter>Utils\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternalFunctions.h">
+      <Filter>Utils\ExternalFunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="Encoding.h">
+      <Filter>Utils\Security</Filter>
+    </ClInclude>
+    <ClInclude Include="Threads.h">
+      <Filter>Utils\Threads</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Dll\Internals</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Dll\Internals</Filter>
+    </ClInclude>
+    <ClInclude Include="DllCore.h">
+      <Filter>Dll</Filter>
+    </ClInclude>
+    <ClInclude Include="Predefs.h">
+      <Filter>Dll</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Roblox.cpp">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

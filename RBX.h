@@ -1,18 +1,23 @@
 #pragma once
 #include "RbxTypes.h"
 #include "RbxInstance.h"
+#include "Properties.h"
+#include "TTypes.h"
+#include "ClassDescriptor.h"
 #include "RbxMem.hpp"
 #include "Offsets.hpp"
+
 #include <vector>
 #include <string>
 #include <filesystem>
 #include <unordered_map>
 #include <Windows.h>
 
+
 namespace RBX {
-    #define RBX_DataModelInternalOffset 23
+    #define RBX_DataModelInternalOffset 16
     #define RBX_ZeroPointInternalOffset 1
-    #define RBX_ALLACCESS 1
+    #define RBX_ALLACCESS PROCESS_ALL_ACCESS
 
     template<typename ReturnType, typename ...Args>
     using FunctionPointer = ReturnType(*)(Args...);
@@ -41,7 +46,12 @@ namespace RBX {
     namespace Security {
         uintptr_t GetFunctionAddress(const std::string& name);
         uintptr_t GetModuleFunctionAddress(const char*, const char*);
-        void TestHook();
+    }
+
+    namespace MemorySecurity {
+        MEMORY_BASIC_INFORMATION QueryMemoryAddress(HANDLE, uintptr_t);
+        int GetMemorySecurity(HANDLE, uintptr_t);
+        BOOL SetMemorySecurity(HANDLE, uintptr_t);
     }
 
     namespace FunctionInfo {
@@ -65,12 +75,17 @@ namespace RBX {
 
     namespace Utils {
         RBX::Types::RbxInt HexStringToDecimal(const std::string&);
-        RBX::Types::RbxInt  GetDataModel(std::string);
+        RBX::Types::RbxInt  GetRenderView(std::string);
         int GetRobloxProcessId();
         template<typename ...Args>
         std::string string_format(const std::string&, Args... args);
         std::string GetAppData();
         std::filesystem::path GetCurrentRbxLogFile();
         std::vector<std::string> ReverseLines(const std::filesystem::path&);
+    }
+
+    namespace Roblox {
+        std::optional< std::string> GetRobloxPath();
+        void CreateRobloxProcess();
     }
 }
