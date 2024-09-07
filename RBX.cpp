@@ -265,7 +265,7 @@ namespace RBX {
                 NULL,                         // Command line arguments
                 NULL,                         // Process security attributes
                 NULL,                         // Thread security attributes
-                TRUE,                        // Inherit handles
+                TRUE,                         // Inherit handles
                 0,                            // Creation flags
                 NULL,                         // Environment
                 NULL,                         // Current directory

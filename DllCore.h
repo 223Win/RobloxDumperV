@@ -4,7 +4,8 @@
 #include <Windows.h>
 
 #define EXPORT  __declspec(dllexport)
-#define External extern "C++"
+#define External extern "C"
 
 
-EXPORT ClassLinkingData MakeRbxInstance(uintptr_t,HANDLE);
+External EXPORT ClassLinkingData* MakeRbxInstance(uintptr_t, HANDLE);
+External EXPORT uintptr_t GetDatamodelFromRenderView(uintptr_t, HANDLE);

@@ -1,4 +1,5 @@
 #pragma once
+#include <functional>
 #include <string>
 #include <vector>
 
@@ -7,30 +8,20 @@
 // Classes are required or Linker cannot link to Dumper
 
 #define vec std::vector
+#define str5 std::string
 
-
-class InternalFunctionData
+struct InternalFunctionData
 {
-public:
 	std::string Name;
 	uintptr_t FunctionPointer;
-
-	InternalFunctionData() = default;
-	InternalFunctionData(const std::string& NameOfFunction, uintptr_t FunctionPtr)
-		: Name(NameOfFunction), FunctionPointer(FunctionPtr) {}
-
 };
 
-class InternalPropertyData
+struct InternalPropertyData
 {
-public:
 	std::string Name;
-	uintptr_t* ValuePointer;
-
-	InternalPropertyData() = default;
-	InternalPropertyData(const std::string& NameOfProperty, uintptr_t* ValuePtr)
-		: Name(NameOfProperty), ValuePointer(ValuePtr) {}
+	uintptr_t ValuePointer;
 };
+
 
 class ClassLinkingData
 {
@@ -43,15 +34,68 @@ public:
 	ClassLinkingData(const std::string& NameOfClass)
 		: Name(NameOfClass) {}
 
-	void AddProperty(const std::string& NameOfProp, uintptr_t* ValuePointer)
+	template<typename PropType>
+	void AddProperty(const std::string& NameOfProp, PropType Value)
 	{
-		InternalPropertyData Data = InternalPropertyData(NameOfProp, ValuePointer);
+		InternalPropertyData Data{ NameOfProp, reinterpret_cast<uintptr_t>(new PropType(Value)) };
 		Properties.emplace_back(Data);
 	}
+
 	template<typename FuncType>
-	void AddFunction(const std::string& NameOfFunc, FuncType FunctionLambda)
+	void AddFunction(const std::string& NameOfFunc, std::function<FuncType> FunctionLambda)
 	{
-		InternalFunctionData Data = InternalFunctionData(NameOfFunc, FunctionLambda);
+		auto FuncPtr = new std::function<FuncType>(FunctionLambda);
+		InternalFunctionData Data{ NameOfFunc, reinterpret_cast<uintptr_t>(FuncPtr) };
 		Functions.emplace_back(Data);
+	}
+
+	vec<InternalPropertyData>* GetPropertiesVectorPointer()
+	{
+		return &Properties;
+	}
+
+	vec<InternalFunctionData>* GetFunctionsVectorPointer()
+	{
+		return &Functions;
+	}
+
+	vec<InternalFunctionData> GetFunctions()
+	{
+		return Functions;
+	}
+
+	vec<InternalPropertyData> GetProperties()
+	{
+		return Properties;
+	}
+
+	template<typename PropertyType>
+	PropertyType GetPropertyValue(const std::string& PropName)
+	{
+		for (InternalPropertyData& PropObj : GetProperties())
+		{
+			if (PropObj.Name == PropName)
+			{
+				auto Val = reinterpret_cast<PropertyType*>(PropObj.ValuePointer);
+				return *Val;
+			}
+		}
+		return PropertyType();
+	}
+
+	template<typename ReturnType, typename FunctionType>
+	ReturnType CallFunction(const std::string& FuncName)
+	{
+		for (const InternalFunctionData& FuncObj : GetFunctions())
+		{
+			if (FuncObj.Name == FuncName)
+			{
+				auto Func = reinterpret_cast<std::function<FunctionType>*>(FuncObj.FunctionPointer);
+				ReturnType ReturnedVal = (*Func)();
+				return ReturnedVal;
+			}
+		}
+
+		return ReturnType();
 	}
 };

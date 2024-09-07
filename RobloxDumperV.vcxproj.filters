@@ -144,9 +144,6 @@
     <ClCompile Include="TypeRegistery.cpp">
       <Filter>Objects\TTypes</Filter>
     </ClCompile>
-    <ClCompile Include="Getter.cpp">
-      <Filter>Objects\Properties</Filter>
-    </ClCompile>
     <ClCompile Include="DebugMode.cpp">
       <Filter>Utils\Debug</Filter>
     </ClCompile>
@@ -164,6 +161,9 @@
     </ClCompile>
     <ClCompile Include="DllCore.cpp">
       <Filter>Dll</Filter>
+    </ClCompile>
+    <ClCompile Include="Getter.cpp">
+      <Filter>Objects\Properties</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -296,9 +296,6 @@
     <ClInclude Include="BaseObject.h">
       <Filter>Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Getter.h">
-      <Filter>Objects\Properties</Filter>
-    </ClInclude>
     <ClInclude Include="DebugMode.h">
       <Filter>Utils\Debug</Filter>
     </ClInclude>
@@ -322,6 +319,9 @@
     </ClInclude>
     <ClInclude Include="Predefs.h">
       <Filter>Dll</Filter>
+    </ClInclude>
+    <ClInclude Include="Getter.h">
+      <Filter>Objects\Properties</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

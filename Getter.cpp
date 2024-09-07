@@ -1,4 +1,4 @@
-#include "TypeRegistery.cpp"
+#include "TypeRegistery.h"
 #include "RBX.h"
 #include "RbxMem.hpp"
 #include "Getter.h"

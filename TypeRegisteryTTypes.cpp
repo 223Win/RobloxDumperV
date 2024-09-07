@@ -1,5 +1,6 @@
 
-#include "TypeRegistery.cpp"
+#include "TypeRegistery.h"
+#include  "TypeRegisteryTTypes.h"
 
 namespace RBX {
 	namespace TypeRegistery {

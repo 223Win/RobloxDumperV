@@ -154,9 +154,10 @@ int main()
             
             for (auto Child: Children) {
                 std::cout << Child.Name() << std::endl;
+                std::cout << "Address: " << Child.InstancePointerInt << std::endl;
                 //std::cout << Child.InstancePointerInt << std::endl;
                 
-                Child.GetProperty("random");
+                //Child.GetProperty("random");
                 //std::cout << Child.ClassName() << std::endl;
 
             }

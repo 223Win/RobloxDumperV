@@ -34,8 +34,8 @@ namespace RBX {
     void Instance::GetProperty(std::string Name) {
         RBX::ClassDescriptor(*this, InheritedRobloxHandle).ParseProperties();
     }
-    uintptr_t Instance::Parent() {
-        return RBX::Memory::Read<uintptr_t>(InheritedRobloxHandle, InstancePointerInt + RBX::Offsets::Parent);
+    Instance Instance::Parent() {
+        return Instance(RBX::Memory::Read<uintptr_t>(InheritedRobloxHandle, InstancePointerInt + RBX::Offsets::Parent), InheritedRobloxHandle);
     }
     std::string Instance::ClassName() {
         uintptr_t ClassNamePointer = RBX::Memory::Read<uintptr_t>(InheritedRobloxHandle, ClassDescriptor + 0x8);
