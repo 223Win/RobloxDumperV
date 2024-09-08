@@ -115,7 +115,7 @@ External EXPORT CStr RbxGetClassName(uintptr_t Obj)
 External EXPORT uintptr_t RbxGetParent(uintptr_t Obj)
 {
 	RBX::Instance* Inst = new RBX::Instance(DecodeRbxInstance(Obj));
-	return EncodeRbxInstance(Inst->Parent());
+	return Inst->Parent().InstancePointerInt;
 }
 
 External EXPORT uintptr_t RbxGetAddress(uintptr_t Obj)
@@ -127,14 +127,20 @@ External EXPORT uintptr_t RbxGetAddress(uintptr_t Obj)
 External EXPORT vec<uintptr_t>* RbxGetChildren(uintptr_t Obj)
 {
 	RBX::Instance* Inst = new RBX::Instance(DecodeRbxInstance(Obj));
-	vec<uintptr_t>* Children {};
+	static auto Ch = Inst->GetChildren();
 
-	for (auto Child: Inst->GetChildren())
+	vec<uintptr_t> Children;
+	
+
+	for (auto Child: Ch)
 	{
-		Children->emplace_back(EncodeRbxInstance(Child));
+		auto Encoded = Child.InstancePointerInt;
+		Children.emplace_back(Encoded);
 	}
+	auto Size = Children.size();
+	std::vector<uintptr_t>* RealValue = new std::vector(Children); // Have to make a pointer here or other-side won't decode correctly
 
-	return Children;
+	return RealValue;
 }
 
 External EXPORT ClassLinkingData* MakeRbxInstance(uintptr_t Address, HANDLE RobloxHandle)

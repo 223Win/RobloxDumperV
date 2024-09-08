@@ -23,7 +23,7 @@ namespace RBX {
 
         for (uintptr_t Inst = Start; Inst != End; Inst += 16)
         {
-            std::cout << RBX::Memory::Read<uintptr_t>(InheritedRobloxHandle, Inst) << std::endl;
+            
             ChildrenObject.emplace_back(Instance(RBX::Memory::Read<uintptr_t>(InheritedRobloxHandle, Inst), this->InheritedRobloxHandle));
         }
         Start = NULL;
